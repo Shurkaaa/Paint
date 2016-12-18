@@ -152,7 +152,7 @@ void PaintWindow::save()
     QSvgGenerator generator;        // Создаём объект генератора файла
     generator.setFileName(path);    // Устанавливаем путь к файлу, куда будет сохраняться векторная графика
     generator.setSize(QSize(mScene->width(), mScene->height()));  // Устанавливаем размеры рабочей области документа в миллиметрах
-    generator.setViewBox(QRect(0, 0, mScene->width(), mScene->height())); // Устанавливаем рабочую область в координатах
+    generator.setViewBox(QRect(-1, -1, mScene->width(), mScene->height())); // Устанавливаем рабочую область в координатах
     generator.setTitle(trUtf8("SVG Example"));                          // Титульное название документа
     generator.setDescription(trUtf8("File created by SVG Example"));    // Описание документа
 
