@@ -16,7 +16,7 @@ void PaintWindow::setupForm()
     btnEnter = new QPushButton("Enter");
 
     ldtCommandLine = new QLineEdit;
-    ldtCommandLine->setText("polygon(4,0,0,0,100,100,100,100,0)");
+    ldtCommandLine->setText("polygon(0,0,0,100,100,100,100,0)");
 
     cmdLayout = new QHBoxLayout;
     cmdLayout->addWidget(btnEnter);
@@ -107,8 +107,7 @@ void PaintWindow::paint() {
             str.remove(0, str.indexOf("(") + 1);
             QVector <int> coords;
 
-            int count = str.mid(0, str.indexOf(",")).toInt();
-            str.remove(0, str.indexOf(",") + 1);
+            int count = (str.count(",") + 1) / 2;
 
             for (int i = 0; i < count*2; i++) //заполняет вектор coords координатами
         {
